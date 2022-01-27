@@ -6,12 +6,12 @@ const useData = () => {
   const [page, setPage] = useState(0);
   const [pageCount, setPageCount] = useState(0);
   const [userBooking, setUserBooking] = useState([]);
+  const [recall, setRecall] = useState(false);
   const { user } = useFirebase();
   useEffect(() => {
     fetch(`http://localhost:5000/places/${page}`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         const count = data.count;
         const pageNumber = Math.ceil(count / 10);
         setPageCount(pageNumber);
@@ -22,8 +22,18 @@ const useData = () => {
     fetch(`http://localhost:5000/userBooking/${user.uid}`)
       .then((res) => res.json())
       .then((data) => setUserBooking(data));
-  }, [user.uid]);
-  return { places, setPage, pageCount, page, userBooking, setUserBooking };
+  }, [user.uid, recall]);
+
+  return {
+    places,
+    setPage,
+    pageCount,
+    page,
+    userBooking,
+    setUserBooking,
+    setRecall,
+    recall,
+  };
 };
 
 export default useData;

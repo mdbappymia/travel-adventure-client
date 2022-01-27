@@ -53,9 +53,11 @@ const AddReview = () => {
           <label>Your Message:</label>
           <textarea
             onBlur={(e) => setMessage(e.target.value)}
+            maxlength="300"
             className="border-2 border-black w-full my-3 p-2 text-2xl rounded-md"
             rows="5"
           ></textarea>
+
           <button
             type="submit"
             className="mt-3 px-5 py-2 text-white rounded hover:bg-sky-800 bg-sky-900"

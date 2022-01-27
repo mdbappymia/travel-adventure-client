@@ -5,7 +5,7 @@ import useStore from "../../../hooks/useStore";
 
 const Dashboard = () => {
   const [openNav, setOpenNav] = useState(false);
-  const { logOut } = useStore();
+  const { logOut, admin } = useStore();
   return (
     <div>
       <div className="relative min-h-screen md:flex">
@@ -35,7 +35,8 @@ const Dashboard = () => {
 
         {/* <!-- sidebar --> */}
         <div
-          className={`sidebar bg-blue-800 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform  md:relative md:translate-x-0 transition duration-200 ease-in-out ${
+          onClick={() => setOpenNav(false)}
+          className={`sidebar bg-blue-800 z-50 text-blue-100 w-64 space-y-6 py-7 px-2 absolute inset-y-0 left-0 transform  md:relative md:translate-x-0 transition duration-200 ease-in-out ${
             !openNav ? "-translate-x-full" : ""
           }`}
         >
@@ -59,7 +60,7 @@ const Dashboard = () => {
               to="/dashboard"
               className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
             >
-              Manage Order
+              Manage Booking Place
             </Link>
             <Link
               to="/dashboard"
@@ -67,30 +68,36 @@ const Dashboard = () => {
             >
               Payment
             </Link>
-            <Link
-              to={`/dashboard/addBlog`}
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
-            >
-              Add Place
-            </Link>
+            {admin && (
+              <Link
+                to={`/dashboard/addBlog`}
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
+              >
+                Add Place
+              </Link>
+            )}
             <Link
               to="/dashboard/addReview"
               className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
             >
               Add Review
             </Link>
-            <Link
-              to="/dashboard/manageAllOrder"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
-            >
-              Manage All Order
-            </Link>
-            <Link
-              to="/dashboard/adminManagement"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
-            >
-              Admin Management
-            </Link>
+            {admin && (
+              <Link
+                to="/dashboard/manageAllOrder"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
+              >
+                Manage All Place
+              </Link>
+            )}
+            {admin && (
+              <Link
+                to="/dashboard/adminManagement"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
+              >
+                Admin Management
+              </Link>
+            )}
             <Link
               to="/"
               className="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700 hover:text-white"
@@ -109,7 +116,7 @@ const Dashboard = () => {
         </div>
 
         {/* <!-- content --> */}
-        <div className="flex-1 p-10 text-2xl">
+        <div className="flex-1 lg:p-10 sm:p-3 text-2xl">
           <Outlet />
         </div>
       </div>

@@ -24,7 +24,6 @@ const Login = () => {
       signInUsingEmailAndPassword(data.email, data.password, navigate, from);
     }
   };
-  console.log(user);
   return (
     <>
       <AppBar />
@@ -57,13 +56,13 @@ const Login = () => {
             <br />
             {isRegister ? (
               <input
-                className="bg-sky-900 px-3 py-2 text-white rounded"
+                className="bg-sky-900 px-3 py-2 text-white rounded cursor-pointer"
                 type="submit"
                 value="Register"
               />
             ) : (
               <input
-                className="bg-sky-900 px-3 py-2 text-white rounded"
+                className="bg-sky-900 px-3 py-2 text-white rounded cursor-pointer"
                 type="submit"
                 value="Login"
               />
@@ -91,7 +90,7 @@ const Login = () => {
             </h1>
           )}
           <div
-            onClick={signInUsingGoogle}
+            onClick={() => signInUsingGoogle(navigate, from)}
             className="flex hover:bg-green-700 bg-green-900 text-white p-4 items-center text-2xl cursor-pointer"
           >
             <i className="fab fa-google text-orange-400"></i>

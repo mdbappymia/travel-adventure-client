@@ -25,7 +25,7 @@ const PlaceDetails = ({ id }) => {
         address: data.address,
         district: data.district,
         phone: data.phone,
-        data: data.date,
+        date: data.date,
         booked: place,
         status: "Pending",
       };

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useStore from "../../../hooks/useStore";
+import { HashLink } from "react-router-hash-link";
 
 const AppBar = () => {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
@@ -42,40 +43,42 @@ const AppBar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <a
+                <HashLink
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  to="/#places"
                 >
                   <i className="fab fa-twitter text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">Place</span>
-                </a>
+                </HashLink>
+              </li>
+              <li className="nav-item">
+                {user.email && (
+                  <Link
+                    className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                    to="/dashboard"
+                  >
+                    <i className="fas fa-columns text-lg leading-lg text-white opacity-75"></i>
+                    <span className="ml-2">Dashboard</span>
+                  </Link>
+                )}
               </li>
               <li className="nav-item">
                 <Link
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  to="/dashboard"
-                >
-                  <i className="fas fa-columns text-lg leading-lg text-white opacity-75"></i>
-                  <span className="ml-2">Dashboard</span>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a
-                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  to="/about"
                 >
                   <i className="fas fa-address-book text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">About</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item">
-                <a
+                <HashLink
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
-                  href="#pablo"
+                  to="/#reviews"
                 >
                   <i className="fas fa-thumbs-up text-lg leading-lg text-white opacity-75"></i>
                   <span className="ml-2">Reviews</span>
-                </a>
+                </HashLink>
               </li>
               {user.email ? (
                 <button

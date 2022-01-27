@@ -6,7 +6,7 @@ const Place = ({ place }) => {
     place;
   return (
     <div className="place-card m-3 border-2 p-3 hover:shadow-black hover:shadow-2xl hover:bg-gray-100">
-      <img className="h-72 w-full" src={image} alt="" />
+      <img className="h-60 w-full" src={image} alt="" />
       <div>
         <h3 className="text-center font-bold text-xl text-green-900 my-5 uppercase">
           {name}

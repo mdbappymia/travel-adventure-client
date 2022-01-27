@@ -15,15 +15,17 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const [admin, setAdmin] = useState(false);
+  const [adminLoading, setAdminLoading] = useState(true);
   const auth = getAuth();
   //   sign in using google
   const provider = new GoogleAuthProvider();
-  const signInUsingGoogle = () => {
+  const signInUsingGoogle = (navigate, from) => {
     signInWithPopup(auth, provider)
       .then((result) => {
         setUser(result.user);
-
         saveUser(result.user.email, result.user.displayName, result.user.uid);
+        navigate(from);
       })
       .catch((e) => {
         setError(e.message);
@@ -81,10 +83,24 @@ const useFirebase = () => {
       })
       .finally(() => setIsLoading(false));
   };
+  // console.log(admin);
   useEffect(() => {
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
+        setAdminLoading(true);
+        fetch(`http://localhost:5000/users/${user.uid}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data?.role === "Admin") {
+              setAdmin(true);
+            } else {
+              setAdmin(false);
+            }
+          })
+          .finally(() => {
+            setAdminLoading(false);
+          });
       } else {
         setUser({});
       }
@@ -113,6 +129,8 @@ const useFirebase = () => {
     isLoading,
     logOut,
     signInUsingEmailAndPassword,
+    admin,
+    adminLoading,
   };
 };
 

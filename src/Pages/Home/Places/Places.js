@@ -5,14 +5,14 @@ import "./Places.css";
 const Places = () => {
   const { places, setPage, pageCount, page } = useStore();
   return (
-    <div>
+    <div id="places">
       <h1 className="text-center text-4xl my-10 font-bold">PLACES</h1>
       <div className="place-container container px-4 mx-auto">
         {places.map((place) => (
           <Place key={place._id} place={place} />
         ))}
       </div>
-      <div className="pagination container px-4 mx-auto">
+      <div className="pagination container px-4 mx-auto text-center">
         {[...Array(pageCount).keys()].map((number) => (
           <button
             className={`${
