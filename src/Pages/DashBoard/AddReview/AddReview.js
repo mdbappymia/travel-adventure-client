@@ -18,7 +18,7 @@ const AddReview = () => {
     };
     const isReview = window.confirm("Are you sure information is correct?");
     if (isReview) {
-      fetch("http://localhost:5000/reviews", {
+      fetch("https://blooming-reaches-46527.herokuapp.com/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",

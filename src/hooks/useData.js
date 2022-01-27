@@ -9,7 +9,7 @@ const useData = () => {
   const [recall, setRecall] = useState(false);
   const { user } = useFirebase();
   useEffect(() => {
-    fetch(`http://localhost:5000/places/${page}`)
+    fetch(`https://blooming-reaches-46527.herokuapp.com/places/${page}`)
       .then((res) => res.json())
       .then((data) => {
         const count = data.count;
@@ -19,7 +19,9 @@ const useData = () => {
       });
   }, [page]);
   useEffect(() => {
-    fetch(`http://localhost:5000/userBooking/${user.uid}`)
+    fetch(
+      `https://blooming-reaches-46527.herokuapp.com/userBooking/${user.uid}`
+    )
       .then((res) => res.json())
       .then((data) => setUserBooking(data));
   }, [user.uid, recall]);

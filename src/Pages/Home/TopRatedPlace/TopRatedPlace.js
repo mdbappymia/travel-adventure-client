@@ -4,7 +4,7 @@ import Place from "../Place/Place";
 const TopRatedPlace = () => {
   const [topRated, setTopRated] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allPlaces")
+    fetch("https://blooming-reaches-46527.herokuapp.com/allPlaces")
       .then((res) => res.json())
       .then((data) => {
         data.sort((a, b) => {

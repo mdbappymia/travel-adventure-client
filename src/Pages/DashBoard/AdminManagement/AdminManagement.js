@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 const AdminManagement = () => {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/users")
+    fetch("https://blooming-reaches-46527.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -13,7 +13,7 @@ const AdminManagement = () => {
   const handleMakeAdmin = (id, role) => {
     const isRoleChange = window.confirm("Are you sure?");
     if (isRoleChange) {
-      fetch(`http://localhost:5000/users/${id}`, {
+      fetch(`https://blooming-reaches-46527.herokuapp.com/users/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",
