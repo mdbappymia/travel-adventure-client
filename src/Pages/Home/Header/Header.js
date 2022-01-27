@@ -17,23 +17,44 @@ const Header = () => {
           <img
             alt="slider-1"
             className="w-100"
-            src="https://media.istockphoto.com/photos/young-man-arms-outstretched-by-the-sea-at-sunrise-enjoying-freedom-picture-id1285301614?b=1&k=20&m=1285301614&s=170667a&w=0&h=tDEC2-p91cZiNU5C19sVhB9L08PmaH5wIijCvRDalCI="
+            src="https://www.planetware.com/wpimages/2020/07/world-best-luxury-all-inclusive-resorts-the-brando.jpg"
           />
           <h1 className="legend ">Where the journey begins!</h1>
         </div>
         <div>
           <img
             alt="slider-2"
-            src="https://images.pexels.com/photos/3278215/pexels-photo-3278215.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+            src="https://www.planetware.com/wpimages/2020/07/world-best-luxury-all-inclusive-resorts-lux-south-ari-atoll-maldives.jpg"
           />
           <p className="legend">We make dreams come true!</p>
         </div>
         <div>
           <img
             alt="slider-3"
-            src="https://thumbs.dreamstime.com/b/happy-couple-love-travel-raised-hands-cliff-happy-couple-love-travel-raised-hands-cliff-norway-man-woman-112188598.jpg"
+            src="https://www.planetware.com/wpimages/2020/07/world-best-luxury-all-inclusive-resorts-four-seasons-tented-camp-golden-triangle-thailand.jpg"
           />
           <p className="legend">Traveling opens door to creating memories.</p>
+        </div>
+        <div>
+          <img
+            alt="slider-4"
+            src="https://www.planetware.com/photos-large/CAY/luxury-caribbean-resorts-jade-mountain.jpg"
+          />
+          <p className="legend">Make your next trip awesome</p>
+        </div>
+        <div>
+          <img
+            alt="slider-5"
+            src="https://www.planetware.com/photos-large/CAY/south-africa-safari-lodges-royal-malewane.jpg"
+          />
+          <p className="legend">Travel agents with cheap flights</p>
+        </div>
+        <div>
+          <img
+            alt="slider-6"
+            src="https://www.planetware.com/photos-large/USNY/usa-best-places-new-york.jpg"
+          />
+          <p className="legend">We know the right people</p>
         </div>
       </Carousel>
     </div>

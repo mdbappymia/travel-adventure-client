@@ -68,7 +68,7 @@ const ManageAllOrder = () => {
           className="border m-2 p-2 md:block sm:block lg:flex lg:h-96"
         >
           <img
-            className="h-full md:w-full lg:mr-3 lg:w-2/3"
+            className="h-full md:w-full lg:mr-3 lg:w-2/4"
             src={place?.booked.image}
             alt=""
           />
