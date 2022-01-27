@@ -31,7 +31,7 @@ const About = () => {
           interact deeply with nature, and experience different cultures in the
           most respectful way possible.
         </p>
-        <div className="grid grid-cols-3 my-10">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 my-10">
           <div className="p-3 m-3 border-2 bg-lime-50 text-center hover:scale-105">
             <i className="fas fa-hands-helping text-6xl my-3 text-yellow-700"></i>
             <p className="text-3xl my-2">RESPECTING COMMUNITY FIRST</p>

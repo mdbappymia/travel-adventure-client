@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <>
       <AppBar />
-      <div className="py-5">
+      <div className="py-5 mx-2">
         <div className="lg:w-1/3 m-auto">
           <h1 className="text-3xl text-center font-bold">
             {isRegister ? "Register" : "Login"}

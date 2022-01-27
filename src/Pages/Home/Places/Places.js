@@ -4,9 +4,13 @@ import Place from "../Place/Place";
 import "./Places.css";
 const Places = () => {
   const { places, setPage, pageCount, page } = useStore();
+
   return (
     <div id="places">
       <h1 className="text-center text-4xl my-10 font-bold">PLACES</h1>
+      {!places.length && (
+        <h1 className="text-center text-4xl my-10">Loading...</h1>
+      )}
       <div className="place-container container px-4 mx-auto">
         {places.map((place) => (
           <Place key={place._id} place={place} />
