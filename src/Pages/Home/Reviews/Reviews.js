@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 const Reviews = () => {
   const [reviews, setReviews] = useState();
   useEffect(() => {
-    fetch("https://blooming-reaches-46527.herokuapp.com/reviews")
+    fetch("https://travel-adventure.onrender.com/reviews")
       .then((res) => res.json())
       .then((data) => {
         setReviews(data);

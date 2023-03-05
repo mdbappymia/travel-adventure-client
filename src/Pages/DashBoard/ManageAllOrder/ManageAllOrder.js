@@ -6,7 +6,7 @@ const ManageAllOrder = () => {
   const { recall, setRecall } = useStore();
 
   useEffect(() => {
-    fetch("https://blooming-reaches-46527.herokuapp.com/booking")
+    fetch("https://travel-adventure.onrender.com/booking")
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -17,7 +17,7 @@ const ManageAllOrder = () => {
   const handleDelete = (id) => {
     const isDelete = window.confirm("Are you sure?");
     if (isDelete) {
-      fetch(`https://blooming-reaches-46527.herokuapp.com/booking/${id}`, {
+      fetch(`https://travel-adventure.onrender.com/booking/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())
@@ -35,7 +35,7 @@ const ManageAllOrder = () => {
     const isConfirm = window.confirm("Are you sure it approved?");
 
     if (isConfirm) {
-      fetch(`https://blooming-reaches-46527.herokuapp.com/approve/${id}`, {
+      fetch(`https://travel-adventure.onrender.com/approve/${id}`, {
         method: "PUT",
         headers: {
           "content-type": "application/json",

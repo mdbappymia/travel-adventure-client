@@ -10,7 +10,7 @@ const AddBlog = () => {
     }
     let isAdded = window.confirm("Are you sure this information is correct?");
     if (isAdded) {
-      fetch("https://blooming-reaches-46527.herokuapp.com/places", {
+      fetch("https://travel-adventure.onrender.com/places", {
         method: "POST",
         headers: {
           "content-type": "application/json",

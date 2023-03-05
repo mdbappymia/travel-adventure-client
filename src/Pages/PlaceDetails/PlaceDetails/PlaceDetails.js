@@ -7,7 +7,7 @@ const PlaceDetails = ({ id }) => {
   const [place, setPlace] = useState({});
   const { user, setUserBooking, userBooking } = useStore();
   useEffect(() => {
-    fetch(`https://blooming-reaches-46527.herokuapp.com/place/${id}`)
+    fetch(`https://travel-adventure.onrender.com/place/${id}`)
       .then((res) => res.json())
       .then((data) => setPlace(data));
   }, [id]);
@@ -29,7 +29,7 @@ const PlaceDetails = ({ id }) => {
         booked: place,
         status: "Pending",
       };
-      fetch("https://blooming-reaches-46527.herokuapp.com/booking", {
+      fetch("https://travel-adventure.onrender.com/booking", {
         method: "POST",
         headers: {
           "content-type": "application/json",

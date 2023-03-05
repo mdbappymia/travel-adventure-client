@@ -6,7 +6,7 @@ const ManageOrder = () => {
   const handleDelete = (id) => {
     const isDelete = window.confirm("Are you sure?");
     if (isDelete) {
-      fetch(`https://blooming-reaches-46527.herokuapp.com/booking/${id}`, {
+      fetch(`https://travel-adventure.onrender.com/booking/${id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

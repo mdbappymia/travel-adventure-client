@@ -89,7 +89,7 @@ const useFirebase = () => {
       if (user) {
         setUser(user);
         setAdminLoading(true);
-        fetch(`https://blooming-reaches-46527.herokuapp.com/users/${user.uid}`)
+        fetch(`https://travel-adventure.onrender.com/users/${user.uid}`)
           .then((res) => res.json())
           .then((data) => {
             if (data?.role === "Admin") {
@@ -111,7 +111,7 @@ const useFirebase = () => {
   //   save user to database
   const saveUser = (email, displayName, user_id) => {
     const user = { email, displayName, user_id, role: "User" };
-    fetch("https://blooming-reaches-46527.herokuapp.com/users", {
+    fetch("https://travel-adventure.onrender.com/users", {
       method: `POST`,
       headers: {
         "content-type": "application/json",
